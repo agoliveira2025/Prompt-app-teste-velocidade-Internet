@@ -1,0 +1,149 @@
+Crie um prompt para criar um aplicativo para teste de velocidade da internet com velocímetro animado e exibir dados reais em HTML + JS e Firebase.
+
+Função do Aplicativo, Resultado e Interface:
+
+Testar Velocidade de Download, Upload e Ping
+
+Detectar Nome do Provedor de internet ou IP se possível
+
+Mostrar Resultado do teste de Download e Upload e ping
+
+Registrar Histórico de resultado dos últimos 30 dias e armazena esse dado no Firestore, exibir esse resultado numa tabela na página do aplicativo.
+
+Com base no histórico salvo no Firestore, o app calcula automaticamente a média de dias do teste de Download e Upload e ping
+
+Opção para Excluir dados
+
+Esse aplicativo deve ser criado em HTML + JS e configurado para conectar junto ao firebase.
+
+Interface responsiva, amigável e moderna
+Tema dark
+Cor de fundo Interface lilás + azul + dark
+
+
+Integração com Firebase:
+O app deve ser conectado ao Firebase Firestore usando a seguinte configuração:
+
+// Cole aqui o código do seu projeto Firebase:
+Para conectar o aplicativo ao seu próprio projeto do Firebase, cole abaixo as credenciais do seu Firebase.
+Vá até o console do Firebase, selecione seu projeto e copie o trecho de código de configuração como este:
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// Exemplo de configuração Firebase
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "seu-projeto.firebaseapp.com",
+  projectId: "seu-projeto",
+  storageBucket: "seu-projeto.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123456789:web:abcdef123456"
+};
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+Os dados devem ser salvos e lidos do Firestore usando a SDK modular do Firebase
+-----------------------------------------------------------------------------------------------------------------------
+PROMPT PARA GERAR UM APLICATIVO HTML + JS + FIREBASE FIRESTORE:
+
+Crie um aplicativo completo usando apenas HTML, JavaScript (puro ou com Chart.js para gráficos) e Firebase (Firestore) com a SDK modular.
+
+O aplicativo deve ter as seguintes funcionalidades:
+
+🎯 Função principal:
+Testar velocidade da internet com:
+
+Download (Mbps)
+
+Upload (Mbps)
+
+Ping (ms)
+
+Usar velocímetro animado (pode usar SVG ou Canvas) para mostrar os testes de forma dinâmica.
+
+Detectar o IP público e, se possível, o nome do provedor (via API externa como ipapi.co ou ipinfo.io).
+
+Gostaria que acrescentasse o resultado atual na tela além da médias
+
+💾 Armazenamento no Firebase Firestore:
+Salvar todos os resultados de testes com os seguintes campos:
+
+download, upload, ping, ip, provedor, data
+
+Manter os resultados dos últimos 30 dias.
+
+Calcular automaticamente as médias de download, upload e ping no período.
+
+Interface deve exibir uma tabela com os resultados.
+
+🗑️ Função extra:
+Botão para excluir todos os dados do Firestore.
+
+💡 Interface:
+Moderna, responsiva e com tema escuro.
+
+Cores predominantes: lilás (#8A2BE2), azul escuro (#1E2A38) e preto fosco (#121212).
+
+Layout limpo, amigável, com componentes bem organizados.
+
+🔗 Integração Firebase:
+Conectar ao Firebase com a seguinte configuração (usar SDK modular, Firestore e opcionalmente Analytics):
+
+// Cole aqui o código do seu projeto Firebase:
+Para conectar o aplicativo ao seu próprio projeto do Firebase, cole abaixo as credenciais do seu Firebase.
+Vá até o console do Firebase, selecione seu projeto e copie o trecho de código de configuração como este:
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// Exemplo de configuração Firebase
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "seu-projeto.firebaseapp.com",
+  projectId: "seu-projeto",
+  storageBucket: "seu-projeto.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123456789:web:abcdef123456"
+};
+
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
+🧠 Regras e Considerações:
+Usar JavaScript moderno (ES6+).
+
+Não usar frameworks como React ou Vue.
+
+Interface responsiva para desktop e mobile.
+
+Exibir datas em formato legível (ex: 07/06/2025 - 14:30).
+
+Utilizar armazenamento no Firestore, não em Realtime Database.
+
+Testes de velocidade podem ser feitos com bibliotecas como speedtest.js ou fast.com (ou fazer chamadas a endpoints externos e calcular tempo de resposta).
+
+Mostrar notificações de sucesso/erro ao salvar/excluir dados.
+
+Toda leitura/escrita no Firestore deve ser com getDocs, setDoc, deleteDoc, etc. da SDK modular.
+
+
